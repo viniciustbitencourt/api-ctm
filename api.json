@@ -1,0 +1,47 @@
+{
+    "Defaults" : {
+        "Application" : "SampleApp",
+        "SubApplication" : "SampleSubApp",
+        "RunAs" : "workbench",
+        "Host" : "workbench",
+
+        "Job": {
+            "When" : {
+                "Months": ["JAN", "OCT", "NOV","DEC"],
+                "MonthDays":["17","18","19"],
+                "WeekDays":["MON","TUE", "WED", "THU", "FRI"]
+            },
+            "ActionIfFailure" : {
+                "Type": "If",       
+                "CompletionStatus": "NOTOK",
+                
+                "mailToTeam": {
+                    "Type": "Mail",
+                    "Message": "%%JOBNAME failed",
+                    "To": "vinicius.bitencourt@viavarejo.com.br"
+                }
+            }
+        }
+    },
+
+    "AutomationAPISampleFlow": {
+        "Type": "Folder",
+        "Comment" : "Code reviewed by John",
+
+        "CommandJob": {
+            "Type": "Job:Command",
+            "Command": "echo my 1st job"
+        },
+
+        "ScriptJob": {
+            "Type": "Job:Script",
+            	"FilePath":"/home/workbench/ctm/scripts",
+		"FileName":"ag_diag_comm"
+        },
+
+        "Flow": {
+            "Type": "Flow",
+            "Sequence": ["CommandJob", "ScriptJob"]
+        }
+    }
+}

@@ -1,0 +1,386 @@
+2020-11-17 21:12:55,594 DEBUG JavaUtilLoggerConfig:23 - loaded Java Util Log Configuration and set level for Java7Support class turned to SEVERE (exclude irritated messages)
+2020-11-17 21:12:55,599 DEBUG ProvisioningMainUsingDescriptor:47 - create temp dir
+2020-11-17 21:12:55,604 DEBUG ProvisioningMainUsingDescriptor:446 - created temp dir: /root/.ctmTemp
+2020-11-17 21:12:55,604 DEBUG ProvisioningMainUsingDescriptor:424 - persistent dir /root/.ctm already exist
+2020-11-17 21:12:55,605 DEBUG ProvisioningMainUsingDescriptor:428 - setting persistent dir is: /root/.ctm
+2020-11-17 21:12:55,605 DEBUG ProvisioningMainUsingDescriptor:50 - temp dir=/root/.ctmTemp
+2020-11-17 21:12:55,609 DEBUG ProvisioningMainUsingDescriptor:52 - parsing arguments
+2020-11-17 21:12:55,618 DEBUG CliOptionsDescriptor:213 - parsing args, num of args: 20
+2020-11-17 21:12:55,618 DEBUG CliOptionsDescriptor:219 - arguments string:-image Agent.Linux -agent_tag  -server https://poc-scheduler-1.dc.nova:8443/automation-api -action install -environment devpoc -ctms  -name  -port  -cert 0 -file  
+2020-11-17 21:12:55,631 DEBUG Actions:64 - is saas action:false
+2020-11-17 21:12:55,632 DEBUG Actions:64 - is saas action:false
+2020-11-17 21:12:55,637 DEBUG CtmCli:31 - running ctm cli command: ctm env show
+2020-11-17 21:12:55,640 DEBUG CliCommand:28 - executing:ctm env show
+2020-11-17 21:12:55,647 DEBUG CliCommand:35 - running on UNIX machine (none win)
+2020-11-17 21:12:55,652 DEBUG OsHelper:247 - user default shell from System.getenv(SHELL): /bin/bash
+2020-11-17 21:12:55,652 DEBUG OsHelper:280 - user default shell: /bin/bash
+2020-11-17 21:12:55,658 DEBUG CliCommand:121 - running createWrapperScript(/bin/bash, false)
+2020-11-17 21:12:55,658 DEBUG CliCommand:158 - /root/.bash_profile NOT found
+2020-11-17 21:12:55,659 DEBUG CliCommand:169 - no login script exists, shell wrapper will not use
+2020-11-17 21:12:55,660 DEBUG CliCommand:55 - real command line is:[ctm, env, show]
+2020-11-17 21:12:55,660 DEBUG CliCommand:56 - commandline has 2 arguments.
+2020-11-17 21:12:55,674 DEBUG CliCommand:81 - wait to finish
+2020-11-17 21:12:56,675 DEBUG CliCommand:199 - ctm env show: executing ended successfully
+2020-11-17 21:12:57,681 DEBUG CtmCli:44 - command ctm env show ended successfully
+2020-11-17 21:12:58,198 DEBUG CtmCli:278 - getting current env from original 'ctm env show' output
+2020-11-17 21:12:58,198 DEBUG Environment:280 - env is saas:false
+2020-11-17 21:12:58,205 DEBUG CtmCli:280 - current env: end point https://poc-scheduler-1.dc.nova:8443/automation-api, user:workbench
+2020-11-17 21:12:58,206 DEBUG Environment:33 - env is saas:false
+2020-11-17 21:12:58,210 INFO  Downloader:120 - Making SSL trust all certificates and all hostnames
+2020-11-17 21:12:58,503 DEBUG CliOptionsDescriptor:308 - action: install
+2020-11-17 21:12:58,504 DEBUG CliOptionsDescriptor:312 - for agent install, agent setup and ctm uninstall a ctm is used: 
+2020-11-17 21:12:58,504 DEBUG CtmCli:103 - getting ctm(s) names
+2020-11-17 21:12:58,506 DEBUG CtmCli:31 - running ctm cli command: ctm config servers::get
+2020-11-17 21:12:58,506 DEBUG CliCommand:28 - executing:ctm config servers::get -e devpoc
+2020-11-17 21:12:58,507 DEBUG CliCommand:35 - running on UNIX machine (none win)
+2020-11-17 21:12:58,507 DEBUG CliCommand:121 - running createWrapperScript(/bin/bash, false)
+2020-11-17 21:12:58,507 DEBUG CliCommand:158 - /root/.bash_profile NOT found
+2020-11-17 21:12:58,508 DEBUG CliCommand:169 - no login script exists, shell wrapper will not use
+2020-11-17 21:12:58,508 DEBUG CliCommand:55 - real command line is:[ctm, config, servers::get, -e, devpoc]
+2020-11-17 21:12:58,508 DEBUG CliCommand:56 - commandline has 4 arguments.
+2020-11-17 21:12:58,511 DEBUG CliCommand:81 - wait to finish
+2020-11-17 21:13:03,051 DEBUG CliCommand:199 - ctm config servers::get -e devpoc: executing ended successfully
+2020-11-17 21:13:04,126 DEBUG CtmCli:44 - command ctm config servers::get -e devpoc ended successfully
+2020-11-17 21:13:04,126 DEBUG CtmCli:26 - command ctm config servers::get ended successfully,unmarshalling to io.swagger.model.CtmDetailsList
+2020-11-17 21:13:04,176 DEBUG CtmCli:137 - no ctm was used, using the only existing ctm workbench as default
+2020-11-17 21:13:04,177 DEBUG CliOptionsDescriptor:314 - ctm used: class CtmDetails {
+  name: workbench
+  host: poc-scheduler-1.dc.nova
+  state: null
+  message: null
+  version: null
+}
+
+2020-11-17 21:13:04,206 DEBUG NetworkHelper:375 - set HOSTNAME to linux-zh1y
+2020-11-17 21:13:04,209 DEBUG Environment:33 - env is saas:false
+2020-11-17 21:13:04,211 INFO  DeliveryModeImpl:33 - OnPrem provision delivery mode
+2020-11-17 21:13:04,212 DEBUG CliOptionsDescriptor:335 - agent name used: linux-zh1y
+2020-11-17 21:13:04,213 DEBUG Actions:64 - is saas action:false
+2020-11-17 21:13:04,213 DEBUG CliOptionsDescriptor:354 - server to agent was not given by the user, searching for free port starting from 7672
+2020-11-17 21:13:04,214 DEBUG NetworkHelper:91 - check if port 7672 free
+2020-11-17 21:13:04,220 DEBUG NetworkHelper:125 - checking if port (7672) is in use.
+2020-11-17 21:13:04,248 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7672 for adress 127.0.0.2
+2020-11-17 21:13:04,249 DEBUG NetworkHelper:159 - port (7672) is used: false
+2020-11-17 21:13:04,250 DEBUG NetworkHelper:353 - checking if port (7672) is reserved.
+2020-11-17 21:13:04,253 DEBUG NetworkHelper:278 - checking if port (7672) is reserved locally.
+2020-11-17 21:13:04,573 DEBUG NetworkHelper:303 - port (7672) is reserved locally: true
+2020-11-17 21:13:04,573 DEBUG NetworkHelper:357 - port (7672) is reserved: true
+2020-11-17 21:13:04,574 DEBUG NetworkHelper:91 - check if port 7673 free
+2020-11-17 21:13:04,574 DEBUG NetworkHelper:125 - checking if port (7673) is in use.
+2020-11-17 21:13:04,574 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7673 for adress 127.0.0.2
+2020-11-17 21:13:04,575 DEBUG NetworkHelper:159 - port (7673) is used: false
+2020-11-17 21:13:04,575 DEBUG NetworkHelper:353 - checking if port (7673) is reserved.
+2020-11-17 21:13:04,575 DEBUG NetworkHelper:278 - checking if port (7673) is reserved locally.
+2020-11-17 21:13:04,742 DEBUG NetworkHelper:303 - port (7673) is reserved locally: true
+2020-11-17 21:13:04,742 DEBUG NetworkHelper:357 - port (7673) is reserved: true
+2020-11-17 21:13:04,743 DEBUG NetworkHelper:91 - check if port 7674 free
+2020-11-17 21:13:04,743 DEBUG NetworkHelper:125 - checking if port (7674) is in use.
+2020-11-17 21:13:04,744 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7674 for adress 127.0.0.2
+2020-11-17 21:13:04,744 DEBUG NetworkHelper:159 - port (7674) is used: false
+2020-11-17 21:13:04,744 DEBUG NetworkHelper:353 - checking if port (7674) is reserved.
+2020-11-17 21:13:04,744 DEBUG NetworkHelper:278 - checking if port (7674) is reserved locally.
+2020-11-17 21:13:04,914 DEBUG NetworkHelper:303 - port (7674) is reserved locally: true
+2020-11-17 21:13:04,915 DEBUG NetworkHelper:357 - port (7674) is reserved: true
+2020-11-17 21:13:04,915 DEBUG NetworkHelper:91 - check if port 7675 free
+2020-11-17 21:13:04,915 DEBUG NetworkHelper:125 - checking if port (7675) is in use.
+2020-11-17 21:13:04,915 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7675 for adress 127.0.0.2
+2020-11-17 21:13:04,916 DEBUG NetworkHelper:159 - port (7675) is used: false
+2020-11-17 21:13:04,916 DEBUG NetworkHelper:353 - checking if port (7675) is reserved.
+2020-11-17 21:13:04,916 DEBUG NetworkHelper:278 - checking if port (7675) is reserved locally.
+2020-11-17 21:13:05,004 DEBUG NetworkHelper:303 - port (7675) is reserved locally: true
+2020-11-17 21:13:05,005 DEBUG NetworkHelper:357 - port (7675) is reserved: true
+2020-11-17 21:13:05,005 DEBUG NetworkHelper:91 - check if port 7676 free
+2020-11-17 21:13:05,006 DEBUG NetworkHelper:125 - checking if port (7676) is in use.
+2020-11-17 21:13:05,006 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7676 for adress 127.0.0.2
+2020-11-17 21:13:05,006 DEBUG NetworkHelper:159 - port (7676) is used: false
+2020-11-17 21:13:05,007 DEBUG NetworkHelper:353 - checking if port (7676) is reserved.
+2020-11-17 21:13:05,007 DEBUG NetworkHelper:278 - checking if port (7676) is reserved locally.
+2020-11-17 21:13:05,086 DEBUG NetworkHelper:303 - port (7676) is reserved locally: true
+2020-11-17 21:13:05,086 DEBUG NetworkHelper:357 - port (7676) is reserved: true
+2020-11-17 21:13:05,086 DEBUG NetworkHelper:91 - check if port 7677 free
+2020-11-17 21:13:05,087 DEBUG NetworkHelper:125 - checking if port (7677) is in use.
+2020-11-17 21:13:05,088 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7677 for adress 127.0.0.2
+2020-11-17 21:13:05,088 DEBUG NetworkHelper:159 - port (7677) is used: false
+2020-11-17 21:13:05,089 DEBUG NetworkHelper:353 - checking if port (7677) is reserved.
+2020-11-17 21:13:05,089 DEBUG NetworkHelper:278 - checking if port (7677) is reserved locally.
+2020-11-17 21:13:05,171 DEBUG NetworkHelper:303 - port (7677) is reserved locally: true
+2020-11-17 21:13:05,171 DEBUG NetworkHelper:357 - port (7677) is reserved: true
+2020-11-17 21:13:05,171 DEBUG NetworkHelper:91 - check if port 7678 free
+2020-11-17 21:13:05,172 DEBUG NetworkHelper:125 - checking if port (7678) is in use.
+2020-11-17 21:13:05,172 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7678 for adress 127.0.0.2
+2020-11-17 21:13:05,172 DEBUG NetworkHelper:159 - port (7678) is used: false
+2020-11-17 21:13:05,173 DEBUG NetworkHelper:353 - checking if port (7678) is reserved.
+2020-11-17 21:13:05,173 DEBUG NetworkHelper:278 - checking if port (7678) is reserved locally.
+2020-11-17 21:13:05,257 DEBUG NetworkHelper:303 - port (7678) is reserved locally: false
+2020-11-17 21:13:05,257 DEBUG NetworkHelper:315 - checking if port (7678) is reserved using NIS.
+2020-11-17 21:13:05,263 DEBUG NetworkHelper:341 - port (7678) is reserved using NIS: false
+2020-11-17 21:13:05,263 DEBUG NetworkHelper:357 - port (7678) is reserved: false
+2020-11-17 21:13:05,263 DEBUG NetworkHelper:93 - found free port 7678
+2020-11-17 21:13:05,264 DEBUG CliOptionsDescriptor:357 - server to agent port is: 7678
+2020-11-17 21:13:05,264 DEBUG CliOptionsDescriptor:360 - finish parse
+2020-11-17 21:13:05,265 DEBUG CtmCli:174 - check if image Agent.Linux exist
+2020-11-17 21:13:05,269 DEBUG CtmCli:31 - running ctm cli command: ctm provision images Linux
+2020-11-17 21:13:05,271 DEBUG CliCommand:28 - executing:ctm provision images Linux -e devpoc
+2020-11-17 21:13:05,271 DEBUG CliCommand:35 - running on UNIX machine (none win)
+2020-11-17 21:13:05,272 DEBUG CliCommand:121 - running createWrapperScript(/bin/bash, false)
+2020-11-17 21:13:05,272 DEBUG CliCommand:158 - /root/.bash_profile NOT found
+2020-11-17 21:13:05,272 DEBUG CliCommand:169 - no login script exists, shell wrapper will not use
+2020-11-17 21:13:05,273 DEBUG CliCommand:55 - real command line is:[ctm, provision, images, Linux, -e, devpoc]
+2020-11-17 21:13:05,273 DEBUG CliCommand:56 - commandline has 5 arguments.
+2020-11-17 21:13:05,274 DEBUG CliCommand:81 - wait to finish
+2020-11-17 21:13:06,852 DEBUG CliCommand:199 - ctm provision images Linux -e devpoc: executing ended successfully
+2020-11-17 21:13:07,881 DEBUG CtmCli:44 - command ctm provision images Linux -e devpoc ended successfully
+2020-11-17 21:13:07,881 DEBUG CtmCli:26 - command ctm provision images Linux ended successfully,unmarshalling to io.swagger.model.StringListResult
+2020-11-17 21:13:07,892 DEBUG OsHelper:115 - arch result is x86_64
+
+2020-11-17 21:13:07,893 DEBUG ProvisioningMainUsingDescriptor:157 - trying to get the descriptor file content in order to check if a GA or a FP is install
+2020-11-17 21:13:07,894 DEBUG OnPremDeliveryMode:42 - trying to get the descriptor file Agent.Linux
+2020-11-17 21:13:07,894 DEBUG OnPremDeliveryMode:45 - descriptor URL:https://poc-scheduler-1.dc.nova:8443/automation-api/descriptors/Agent.Linux.json
+2020-11-17 21:13:08,403 DEBUG OnPremDeliveryMode:48 - descriptor content is :{
+    "OS": "Linux-x86_64",
+    "Installers":
+    [
+      "DRKAI.9.0.00_Linux-x86_64.tar.Z",
+      "PAKAI.9.0.00.100_Linux-x86_64_INSTALL.BIN"
+    ]
+}
+2020-11-17 21:13:08,403 DEBUG ProvisioningMainUsingDescriptor:163 - is trying to provision agent (DRKAI):true
+2020-11-17 21:13:08,403 DEBUG AgentHelper:170 - agent install path is: /root/installed-versions.txt
+2020-11-17 21:13:08,404 DEBUG AgentHelper:175 - Searching for product DRKAI in /root/installed-versions.txt
+2020-11-17 21:13:08,404 DEBUG AgentHelper:190 - DRKAI entry not found in /root/installed-versions.txt
+2020-11-17 21:13:08,404 DEBUG AgentHelper:170 - agent install path is: /root/installed-versions.txt
+2020-11-17 21:13:08,405 DEBUG AgentHelper:175 - Searching for product DRNDN in /root/installed-versions.txt
+2020-11-17 21:13:08,405 DEBUG AgentHelper:190 - DRNDN entry not found in /root/installed-versions.txt
+2020-11-17 21:13:08,406 DEBUG ProvisioningMainUsingDescriptor:252 - starting Install(image & setup)
+2020-11-17 21:13:08,406 DEBUG ProvisioningMainUsingDescriptor:410 - starting deployNewImage
+2020-11-17 21:13:08,408 DEBUG ImageCreator:28 - parsing input file Agent.Linux
+2020-11-17 21:13:08,411 DEBUG OnPremDeliveryMode:38 - descriptor content was already loaded, returning the previous loaded data
+2020-11-17 21:13:08,424 INFO  DescriptorUtils:36 - image descriptor Agent.Linux was successfully downloaded and parsed
+2020-11-17 21:13:08,425 DEBUG ImageCreator:37 - deploying image Agent.Linux
+2020-11-17 21:13:08,425 INFO  ImageCreator:58 - handling product DRKAI.9.0.00_Linux-x86_64.tar.Z
+2020-11-17 21:13:08,425 DEBUG ImageCreator:61 - loading product data to translation map for using in delivery mode:OnPrem
+2020-11-17 21:13:08,427 DEBUG TranslationMap:58 - ShellTranslationMap={${unix.flavor.name}=Linux, ${user.name}=root, ${persistent.folder}=/root/.ctm, ${temp.folder}=/root/.ctmTemp, ${cpu.architecture}=-x86_64}
+2020-11-17 21:13:08,428 DEBUG OnPremDeliveryMode:183 - product code is:DRKAI.9.0.00
+2020-11-17 21:13:08,428 DEBUG TranslationMap:136 - translation map value:{${unix.flavor.name}=Linux, ${user.name}=root, ${product.name}=DRKAI.9.0.00, ${persistent.folder}=/root/.ctm, ${temp.folder}=/root/.ctmTemp, ${cpu.architecture}=-x86_64}
+2020-11-17 21:13:08,719 DEBUG BehaviorsService:53 - loading behavior file:DR-CM.Linux.conf.json
+2020-11-17 21:13:08,754 DEBUG BehaviorsService:57 - behavior file:DR-CM.Linux.conf.json was loaded
+2020-11-17 21:13:08,754 DEBUG BehaviorsService:53 - loading behavior file:DR-CM.Windows.conf.json
+2020-11-17 21:13:08,764 DEBUG BehaviorsService:57 - behavior file:DR-CM.Windows.conf.json was loaded
+2020-11-17 21:13:08,765 DEBUG BehaviorsService:53 - loading behavior file:DRCTV.Linux.conf.json
+2020-11-17 21:13:08,778 DEBUG BehaviorsService:57 - behavior file:DRCTV.Linux.conf.json was loaded
+2020-11-17 21:13:08,778 DEBUG BehaviorsService:53 - loading behavior file:DRCTV.Windows.conf.json
+2020-11-17 21:13:08,783 DEBUG BehaviorsService:57 - behavior file:DRCTV.Windows.conf.json was loaded
+2020-11-17 21:13:08,783 DEBUG BehaviorsService:53 - loading behavior file:DRKAI.Linux.conf.json
+2020-11-17 21:13:08,791 DEBUG BehaviorsService:57 - behavior file:DRKAI.Linux.conf.json was loaded
+2020-11-17 21:13:08,791 DEBUG BehaviorsService:53 - loading behavior file:DRKAI.Windows.conf.json
+2020-11-17 21:13:08,796 DEBUG BehaviorsService:57 - behavior file:DRKAI.Windows.conf.json was loaded
+2020-11-17 21:13:08,796 DEBUG BehaviorsService:53 - loading behavior file:PA-CM.Linux.conf.json
+2020-11-17 21:13:08,801 DEBUG BehaviorsService:57 - behavior file:PA-CM.Linux.conf.json was loaded
+2020-11-17 21:13:08,802 DEBUG BehaviorsService:53 - loading behavior file:PA-CM.Windows.conf.json
+2020-11-17 21:13:08,808 DEBUG BehaviorsService:57 - behavior file:PA-CM.Windows.conf.json was loaded
+2020-11-17 21:13:08,808 DEBUG BehaviorsService:53 - loading behavior file:PAKAI.Linux.conf.json
+2020-11-17 21:13:08,822 DEBUG BehaviorsService:57 - behavior file:PAKAI.Linux.conf.json was loaded
+2020-11-17 21:13:08,822 DEBUG BehaviorsService:53 - loading behavior file:PAKAI.Windows.conf.json
+2020-11-17 21:13:08,832 DEBUG BehaviorsService:57 - behavior file:PAKAI.Windows.conf.json was loaded
+2020-11-17 21:13:08,832 DEBUG BehaviorsService:53 - loading behavior file:SAAS_AGENT.Linux.conf.json
+2020-11-17 21:13:08,837 DEBUG BehaviorsService:57 - behavior file:SAAS_AGENT.Linux.conf.json was loaded
+2020-11-17 21:13:08,837 DEBUG BehaviorsService:53 - loading behavior file:SAAS_AGENT.Windows.conf.json
+2020-11-17 21:13:08,842 DEBUG BehaviorsService:57 - behavior file:SAAS_AGENT.Windows.conf.json was loaded
+2020-11-17 21:13:08,842 DEBUG BehaviorsService:53 - loading behavior file:SAAS_CM.Linux.conf.json
+2020-11-17 21:13:08,846 DEBUG BehaviorsService:57 - behavior file:SAAS_CM.Linux.conf.json was loaded
+2020-11-17 21:13:08,847 DEBUG BehaviorsService:53 - loading behavior file:SAAS_CM.Windows.conf.json
+2020-11-17 21:13:08,851 DEBUG BehaviorsService:57 - behavior file:SAAS_CM.Windows.conf.json was loaded
+2020-11-17 21:13:08,851 DEBUG BehaviorsService:63 - successfully parsed internal behavior files
+2020-11-17 21:13:08,852 DEBUG OnPremDeliveryMode:73 - returning behavior for DRKAI.Linux : EXIST
+2020-11-17 21:13:08,852 DEBUG ImageCreator:69 - perform silent file download and parsing (before downloading install) to verify validity
+2020-11-17 21:13:08,853 DEBUG SilentFile:117 - get behavior for DRKAI.9.0.00_Linux-x86_64.tar.Z
+2020-11-17 21:13:08,853 DEBUG OnPremDeliveryMode:73 - returning behavior for DRKAI.Linux : EXIST
+2020-11-17 21:13:08,854 DEBUG TranslationMap:62 - start to replace all variables
+2020-11-17 21:13:08,854 DEBUG TranslationMap:100 - finish replacing all variables
+2020-11-17 21:13:08,856 DEBUG OnPremDeliveryMode:63 - silent URL for DRKAI.9.0.00_Linux-x86_64.tar.Z is:https://poc-scheduler-1.dc.nova:8443/automation-api/silent/agent.linux.xml
+2020-11-17 21:13:08,859 DEBUG SilentFile:124 - silent file name from from url:agent.linux.xml
+2020-11-17 21:13:08,859 DEBUG SilentFile:126 - downloading silent file https://poc-scheduler-1.dc.nova:8443/automation-api/silent/agent.linux.xml to /root/.ctmTemp/agent.linux.xml
+2020-11-17 21:13:08,860 INFO  Downloader:25 - downloading https://poc-scheduler-1.dc.nova:8443/automation-api/silent/agent.linux.xml to /root/.ctmTemp/agent.linux.xml
+2020-11-17 21:13:08,911 DEBUG Downloader:29 - file size in MB:0
+2020-11-17 21:13:08,912 DEBUG Downloader:69 - progress will NOT be shown
+2020-11-17 21:13:08,912 DEBUG Downloader:72 - start copying 0MB
+2020-11-17 21:13:08,912 DEBUG Downloader:74 - setting connect timeout to 7000
+2020-11-17 21:13:08,913 DEBUG Downloader:75 - setting read timeout to 7000
+2020-11-17 21:13:08,914 DEBUG Downloader:94 - end copying, statue:SUCCESS
+2020-11-17 21:13:08,916 DEBUG SilentFile:129 - silent installation file https://poc-scheduler-1.dc.nova:8443/automation-api/silent/agent.linux.xml was successfully downloaded to 
+2020-11-17 21:13:08,916 DEBUG SilentFile:49 - parsing silent installation file /root/.ctmTemp/agent.linux.xml
+2020-11-17 21:13:08,917 DEBUG TranslationMap:62 - start to replace all variables
+2020-11-17 21:13:08,918 DEBUG TranslationMap:100 - finish replacing all variables
+2020-11-17 21:13:08,919 DEBUG SilentFile:69 - found 'free.port' function in silent file
+2020-11-17 21:13:08,919 DEBUG SilentFile:76 - adding random value 856 to port number to avoid multiple installations port use
+2020-11-17 21:13:08,919 DEBUG SilentFile:78 - searching for free port between 7991 to +1000
+2020-11-17 21:13:08,920 DEBUG NetworkHelper:91 - check if port 7991 free
+2020-11-17 21:13:08,920 DEBUG NetworkHelper:125 - checking if port (7991) is in use.
+2020-11-17 21:13:08,921 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7991 for adress 127.0.0.2
+2020-11-17 21:13:08,923 DEBUG NetworkHelper:159 - port (7991) is used: false
+2020-11-17 21:13:08,923 DEBUG NetworkHelper:353 - checking if port (7991) is reserved.
+2020-11-17 21:13:08,924 DEBUG NetworkHelper:278 - checking if port (7991) is reserved locally.
+2020-11-17 21:13:09,125 DEBUG NetworkHelper:303 - port (7991) is reserved locally: false
+2020-11-17 21:13:09,126 DEBUG NetworkHelper:315 - checking if port (7991) is reserved using NIS.
+2020-11-17 21:13:09,133 DEBUG NetworkHelper:341 - port (7991) is reserved using NIS: false
+2020-11-17 21:13:09,133 DEBUG NetworkHelper:357 - port (7991) is reserved: false
+2020-11-17 21:13:09,134 DEBUG NetworkHelper:93 - found free port 7991
+2020-11-17 21:13:09,134 DEBUG SilentFile:83 - free port 7991 was set in silent file
+2020-11-17 21:13:09,135 DEBUG SilentFile:69 - found 'free.port' function in silent file
+2020-11-17 21:13:09,135 DEBUG SilentFile:76 - adding random value 532 to port number to avoid multiple installations port use
+2020-11-17 21:13:09,135 DEBUG SilentFile:78 - searching for free port between 7767 to +1000
+2020-11-17 21:13:09,135 DEBUG NetworkHelper:91 - check if port 7767 free
+2020-11-17 21:13:09,135 DEBUG NetworkHelper:125 - checking if port (7767) is in use.
+2020-11-17 21:13:09,136 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7767 for adress 127.0.0.2
+2020-11-17 21:13:09,136 DEBUG NetworkHelper:159 - port (7767) is used: false
+2020-11-17 21:13:09,136 DEBUG NetworkHelper:353 - checking if port (7767) is reserved.
+2020-11-17 21:13:09,136 DEBUG NetworkHelper:278 - checking if port (7767) is reserved locally.
+2020-11-17 21:13:09,251 DEBUG NetworkHelper:303 - port (7767) is reserved locally: false
+2020-11-17 21:13:09,251 DEBUG NetworkHelper:315 - checking if port (7767) is reserved using NIS.
+2020-11-17 21:13:09,255 DEBUG NetworkHelper:341 - port (7767) is reserved using NIS: false
+2020-11-17 21:13:09,255 DEBUG NetworkHelper:357 - port (7767) is reserved: false
+2020-11-17 21:13:09,255 DEBUG NetworkHelper:93 - found free port 7767
+2020-11-17 21:13:09,256 DEBUG SilentFile:83 - free port 7767 was set in silent file
+2020-11-17 21:13:09,256 DEBUG SilentFile:69 - found 'free.port' function in silent file
+2020-11-17 21:13:09,256 DEBUG SilentFile:76 - adding random value 768 to port number to avoid multiple installations port use
+2020-11-17 21:13:09,257 DEBUG SilentFile:78 - searching for free port between 8103 to +1000
+2020-11-17 21:13:09,257 DEBUG NetworkHelper:91 - check if port 8103 free
+2020-11-17 21:13:09,257 DEBUG NetworkHelper:125 - checking if port (8103) is in use.
+2020-11-17 21:13:09,257 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 8103 for adress 127.0.0.2
+2020-11-17 21:13:09,258 DEBUG NetworkHelper:159 - port (8103) is used: false
+2020-11-17 21:13:09,258 DEBUG NetworkHelper:353 - checking if port (8103) is reserved.
+2020-11-17 21:13:09,258 DEBUG NetworkHelper:278 - checking if port (8103) is reserved locally.
+2020-11-17 21:13:09,395 DEBUG NetworkHelper:303 - port (8103) is reserved locally: false
+2020-11-17 21:13:09,396 DEBUG NetworkHelper:315 - checking if port (8103) is reserved using NIS.
+2020-11-17 21:13:09,401 DEBUG NetworkHelper:341 - port (8103) is reserved using NIS: false
+2020-11-17 21:13:09,402 DEBUG NetworkHelper:357 - port (8103) is reserved: false
+2020-11-17 21:13:09,402 DEBUG NetworkHelper:93 - found free port 8103
+2020-11-17 21:13:09,402 DEBUG SilentFile:83 - free port 8103 was set in silent file
+2020-11-17 21:13:09,403 DEBUG SilentFile:69 - found 'free.port' function in silent file
+2020-11-17 21:13:09,403 DEBUG SilentFile:76 - adding random value 131 to port number to avoid multiple installations port use
+2020-11-17 21:13:09,403 DEBUG SilentFile:78 - searching for free port between 7166 to +1000
+2020-11-17 21:13:09,403 DEBUG NetworkHelper:91 - check if port 7166 free
+2020-11-17 21:13:09,403 DEBUG NetworkHelper:125 - checking if port (7166) is in use.
+2020-11-17 21:13:09,404 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7166 for adress 127.0.0.2
+2020-11-17 21:13:09,404 DEBUG NetworkHelper:159 - port (7166) is used: false
+2020-11-17 21:13:09,404 DEBUG NetworkHelper:353 - checking if port (7166) is reserved.
+2020-11-17 21:13:09,404 DEBUG NetworkHelper:278 - checking if port (7166) is reserved locally.
+2020-11-17 21:13:09,467 DEBUG NetworkHelper:303 - port (7166) is reserved locally: true
+2020-11-17 21:13:09,468 DEBUG NetworkHelper:357 - port (7166) is reserved: true
+2020-11-17 21:13:09,468 DEBUG NetworkHelper:91 - check if port 7167 free
+2020-11-17 21:13:09,468 DEBUG NetworkHelper:125 - checking if port (7167) is in use.
+2020-11-17 21:13:09,469 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7167 for adress 127.0.0.2
+2020-11-17 21:13:09,469 DEBUG NetworkHelper:159 - port (7167) is used: false
+2020-11-17 21:13:09,469 DEBUG NetworkHelper:353 - checking if port (7167) is reserved.
+2020-11-17 21:13:09,469 DEBUG NetworkHelper:278 - checking if port (7167) is reserved locally.
+2020-11-17 21:13:09,547 DEBUG NetworkHelper:303 - port (7167) is reserved locally: true
+2020-11-17 21:13:09,548 DEBUG NetworkHelper:357 - port (7167) is reserved: true
+2020-11-17 21:13:09,548 DEBUG NetworkHelper:91 - check if port 7168 free
+2020-11-17 21:13:09,548 DEBUG NetworkHelper:125 - checking if port (7168) is in use.
+2020-11-17 21:13:09,549 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7168 for adress 127.0.0.2
+2020-11-17 21:13:09,549 DEBUG NetworkHelper:159 - port (7168) is used: false
+2020-11-17 21:13:09,549 DEBUG NetworkHelper:353 - checking if port (7168) is reserved.
+2020-11-17 21:13:09,549 DEBUG NetworkHelper:278 - checking if port (7168) is reserved locally.
+2020-11-17 21:13:09,629 DEBUG NetworkHelper:303 - port (7168) is reserved locally: true
+2020-11-17 21:13:09,629 DEBUG NetworkHelper:357 - port (7168) is reserved: true
+2020-11-17 21:13:09,630 DEBUG NetworkHelper:91 - check if port 7169 free
+2020-11-17 21:13:09,630 DEBUG NetworkHelper:125 - checking if port (7169) is in use.
+2020-11-17 21:13:09,632 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7169 for adress 127.0.0.2
+2020-11-17 21:13:09,633 DEBUG NetworkHelper:159 - port (7169) is used: false
+2020-11-17 21:13:09,633 DEBUG NetworkHelper:353 - checking if port (7169) is reserved.
+2020-11-17 21:13:09,634 DEBUG NetworkHelper:278 - checking if port (7169) is reserved locally.
+2020-11-17 21:13:09,703 DEBUG NetworkHelper:303 - port (7169) is reserved locally: true
+2020-11-17 21:13:09,704 DEBUG NetworkHelper:357 - port (7169) is reserved: true
+2020-11-17 21:13:09,705 DEBUG NetworkHelper:91 - check if port 7170 free
+2020-11-17 21:13:09,706 DEBUG NetworkHelper:125 - checking if port (7170) is in use.
+2020-11-17 21:13:09,708 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7170 for adress 127.0.0.2
+2020-11-17 21:13:09,709 DEBUG NetworkHelper:159 - port (7170) is used: false
+2020-11-17 21:13:09,709 DEBUG NetworkHelper:353 - checking if port (7170) is reserved.
+2020-11-17 21:13:09,709 DEBUG NetworkHelper:278 - checking if port (7170) is reserved locally.
+2020-11-17 21:13:09,769 DEBUG NetworkHelper:303 - port (7170) is reserved locally: true
+2020-11-17 21:13:09,769 DEBUG NetworkHelper:357 - port (7170) is reserved: true
+2020-11-17 21:13:09,770 DEBUG NetworkHelper:91 - check if port 7171 free
+2020-11-17 21:13:09,772 DEBUG NetworkHelper:125 - checking if port (7171) is in use.
+2020-11-17 21:13:09,772 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7171 for adress 127.0.0.2
+2020-11-17 21:13:09,772 DEBUG NetworkHelper:159 - port (7171) is used: false
+2020-11-17 21:13:09,772 DEBUG NetworkHelper:353 - checking if port (7171) is reserved.
+2020-11-17 21:13:09,773 DEBUG NetworkHelper:278 - checking if port (7171) is reserved locally.
+2020-11-17 21:13:09,833 DEBUG NetworkHelper:303 - port (7171) is reserved locally: true
+2020-11-17 21:13:09,833 DEBUG NetworkHelper:357 - port (7171) is reserved: true
+2020-11-17 21:13:09,834 DEBUG NetworkHelper:91 - check if port 7172 free
+2020-11-17 21:13:09,835 DEBUG NetworkHelper:125 - checking if port (7172) is in use.
+2020-11-17 21:13:09,835 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7172 for adress 127.0.0.2
+2020-11-17 21:13:09,836 DEBUG NetworkHelper:159 - port (7172) is used: false
+2020-11-17 21:13:09,836 DEBUG NetworkHelper:353 - checking if port (7172) is reserved.
+2020-11-17 21:13:09,836 DEBUG NetworkHelper:278 - checking if port (7172) is reserved locally.
+2020-11-17 21:13:09,899 DEBUG NetworkHelper:303 - port (7172) is reserved locally: true
+2020-11-17 21:13:09,899 DEBUG NetworkHelper:357 - port (7172) is reserved: true
+2020-11-17 21:13:09,899 DEBUG NetworkHelper:91 - check if port 7173 free
+2020-11-17 21:13:09,900 DEBUG NetworkHelper:125 - checking if port (7173) is in use.
+2020-11-17 21:13:09,900 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7173 for adress 127.0.0.2
+2020-11-17 21:13:09,900 DEBUG NetworkHelper:159 - port (7173) is used: false
+2020-11-17 21:13:09,900 DEBUG NetworkHelper:353 - checking if port (7173) is reserved.
+2020-11-17 21:13:09,900 DEBUG NetworkHelper:278 - checking if port (7173) is reserved locally.
+2020-11-17 21:13:09,950 DEBUG NetworkHelper:303 - port (7173) is reserved locally: true
+2020-11-17 21:13:09,950 DEBUG NetworkHelper:357 - port (7173) is reserved: true
+2020-11-17 21:13:09,950 DEBUG NetworkHelper:91 - check if port 7174 free
+2020-11-17 21:13:09,951 DEBUG NetworkHelper:125 - checking if port (7174) is in use.
+2020-11-17 21:13:09,951 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7174 for adress 127.0.0.2
+2020-11-17 21:13:09,951 DEBUG NetworkHelper:159 - port (7174) is used: false
+2020-11-17 21:13:09,951 DEBUG NetworkHelper:353 - checking if port (7174) is reserved.
+2020-11-17 21:13:09,951 DEBUG NetworkHelper:278 - checking if port (7174) is reserved locally.
+2020-11-17 21:13:09,996 DEBUG NetworkHelper:303 - port (7174) is reserved locally: true
+2020-11-17 21:13:09,998 DEBUG NetworkHelper:357 - port (7174) is reserved: true
+2020-11-17 21:13:09,998 DEBUG NetworkHelper:91 - check if port 7175 free
+2020-11-17 21:13:09,999 DEBUG NetworkHelper:125 - checking if port (7175) is in use.
+2020-11-17 21:13:09,999 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7175 for adress 127.0.0.2
+2020-11-17 21:13:09,999 DEBUG NetworkHelper:159 - port (7175) is used: false
+2020-11-17 21:13:09,999 DEBUG NetworkHelper:353 - checking if port (7175) is reserved.
+2020-11-17 21:13:10,000 DEBUG NetworkHelper:278 - checking if port (7175) is reserved locally.
+2020-11-17 21:13:10,066 DEBUG NetworkHelper:303 - port (7175) is reserved locally: false
+2020-11-17 21:13:10,067 DEBUG NetworkHelper:315 - checking if port (7175) is reserved using NIS.
+2020-11-17 21:13:10,069 DEBUG NetworkHelper:341 - port (7175) is reserved using NIS: false
+2020-11-17 21:13:10,070 DEBUG NetworkHelper:357 - port (7175) is reserved: false
+2020-11-17 21:13:10,070 DEBUG NetworkHelper:93 - found free port 7175
+2020-11-17 21:13:10,070 DEBUG SilentFile:83 - free port 7175 was set in silent file
+2020-11-17 21:13:10,070 DEBUG SilentFile:69 - found 'free.port' function in silent file
+2020-11-17 21:13:10,071 DEBUG SilentFile:76 - adding random value 745 to port number to avoid multiple installations port use
+2020-11-17 21:13:10,071 DEBUG SilentFile:78 - searching for free port between 7751 to +1000
+2020-11-17 21:13:10,071 DEBUG NetworkHelper:91 - check if port 7751 free
+2020-11-17 21:13:10,071 DEBUG NetworkHelper:125 - checking if port (7751) is in use.
+2020-11-17 21:13:10,071 DEBUG NetworkHelper:192 - CheckBindingForAllLocalAdresses: Testing port 7751 for adress 127.0.0.2
+2020-11-17 21:13:10,072 DEBUG NetworkHelper:159 - port (7751) is used: false
+2020-11-17 21:13:10,072 DEBUG NetworkHelper:353 - checking if port (7751) is reserved.
+2020-11-17 21:13:10,072 DEBUG NetworkHelper:278 - checking if port (7751) is reserved locally.
+2020-11-17 21:13:10,128 DEBUG NetworkHelper:303 - port (7751) is reserved locally: false
+2020-11-17 21:13:10,128 DEBUG NetworkHelper:315 - checking if port (7751) is reserved using NIS.
+2020-11-17 21:13:10,130 DEBUG NetworkHelper:341 - port (7751) is reserved using NIS: false
+2020-11-17 21:13:10,131 DEBUG NetworkHelper:357 - port (7751) is reserved: false
+2020-11-17 21:13:10,131 DEBUG NetworkHelper:93 - found free port 7751
+2020-11-17 21:13:10,132 DEBUG SilentFile:83 - free port 7751 was set in silent file
+2020-11-17 21:13:10,132 DEBUG SilentFile:110 - silent file /root/.ctmTemp/agent.linux.xml content (not all entries are used):/n<AutomatedInstallation langpack="eng">    <agent.parameters>        <entry key="ctm_agent.AR_AT.Common.Port" value="7991"/>        <entry key="ctm_agent.AR_UT.Common.Port" value="7767"/>        <entry key="ctm_agent.AR_AG.Common.Port" value="8103"/>        <entry key="ctm_agent.Tracker.Event.Port" value="7175"/>        <entry key="field.Authorized.Controlm.Server.Host" value="BMC-APPDEV-SAMPLE"/>        <entry key="field.Agent.To.Server.Port.Number" value="7005"/>        <entry key="ctm_agent.Tcp_ip.Timeout" value="60"/>        <entry key="field.Server.To.Agent.Port.Number" value="7751"/>        <entry key="Ignore.Disabling.Agent.Failure" value="false"/>        <entry key="ctm_agent.Force.Upgrade" value="false"/>        <entry key="field.Primary.Controlm.Server.Host" value="BMC-APPDEV-SAMPLE"/>    </agent.parameters></AutomatedInstallation>
+2020-11-17 21:13:10,134 DEBUG ImageCreator:81 - downloading DRKAI.9.0.00_Linux-x86_64.tar.Z to temp foler 
+2020-11-17 21:13:10,134 DEBUG OnPremDeliveryMode:73 - returning behavior for DRKAI.Linux : EXIST
+2020-11-17 21:13:10,134 DEBUG ImageCreator:139 - download location is temp folder - it will not be deleted before downloading
+2020-11-17 21:13:10,135 DEBUG ImageCreator:141 - location to download to: /root/.ctmTemp
+2020-11-17 21:13:10,135 DEBUG OnPremDeliveryMode:139 - config URL is:https://poc-scheduler-1.dc.nova:8443/automation-api/descriptors/ProvisionConfig.json
+2020-11-17 21:13:10,135 DEBUG OnPremDeliveryMode:141 - downloading installation location file https://poc-scheduler-1.dc.nova:8443/automation-api/descriptors/ProvisionConfig.json to /root/.ctmTemp/ProvisionConfig.json
+2020-11-17 21:13:10,135 INFO  Downloader:25 - downloading https://poc-scheduler-1.dc.nova:8443/automation-api/descriptors/ProvisionConfig.json to /root/.ctmTemp/ProvisionConfig.json
+2020-11-17 21:13:10,164 DEBUG Downloader:29 - file size in MB:0
+2020-11-17 21:13:10,165 DEBUG Downloader:69 - progress will NOT be shown
+2020-11-17 21:13:10,165 DEBUG Downloader:72 - start copying 0MB
+2020-11-17 21:13:10,165 DEBUG Downloader:74 - setting connect timeout to 7000
+2020-11-17 21:13:10,165 DEBUG Downloader:75 - setting read timeout to 7000
+2020-11-17 21:13:10,166 DEBUG Downloader:94 - end copying, statue:SUCCESS
+2020-11-17 21:13:10,166 DEBUG OnPremDeliveryMode:144 - provision configuration file https://poc-scheduler-1.dc.nova:8443/automation-api/descriptors/ProvisionConfig.json was successfully downloaded to /root/.ctmTemp/ProvisionConfig.json
+2020-11-17 21:13:10,169 DEBUG OnPremDeliveryMode:154 - downloading URL https://s3-us-west-2.amazonaws.com/controlm-appdev/automation/AUTO_DEPLOY/DRKAI.9.0.00_Linux-x86_64.tar.Z to /root/.ctmTemp/DRKAI.9.0.00_Linux-x86_64.tar.Z
+2020-11-17 21:13:10,169 INFO  Downloader:25 - downloading https://s3-us-west-2.amazonaws.com/controlm-appdev/automation/AUTO_DEPLOY/DRKAI.9.0.00_Linux-x86_64.tar.Z to /root/.ctmTemp/DRKAI.9.0.00_Linux-x86_64.tar.Z
+2020-11-17 21:13:11,395 DEBUG Downloader:29 - file size in MB:431
+2020-11-17 21:13:11,396 DEBUG Downloader:35 - progress will be displayed
+2020-11-17 21:13:11,396 DEBUG Downloader:64 - starting  progress thread
+2020-11-17 21:13:11,396 DEBUG Downloader:72 - start copying 431MB
+2020-11-17 21:13:11,397 DEBUG Downloader:74 - setting connect timeout to 7000
+2020-11-17 21:13:11,397 DEBUG Downloader:75 - setting read timeout to 7000
+2020-11-17 21:13:11,397 DEBUG Downloader:40 - progress thread started
+2020-11-17 21:13:43,916 INFO  LogUtils:16 - ~~~!!!1% (5MB/431MB) - downloading...
+2020-11-17 21:14:21,932 INFO  LogUtils:16 - ~~~!!!2% (9MB/431MB) - downloading...

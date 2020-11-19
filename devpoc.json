@@ -1,0 +1,91 @@
+{
+  "AutomationAPISampleFlow": {
+    "Type": "Folder",
+    "ControlmServer": "workbench",
+    "RunAs": "workbench",
+    "SubApplication": "SampleSubApp",
+    "Application": "SampleApp",
+    "CommandJob": {
+      "Type": "Job:Command",
+      "SubApplication": "SampleSubApp",
+      "Host": "workbench",
+      "RunAs": "workbench",
+      "Application": "SampleApp",
+      "Command": "echo my 1st job",
+      "When": {
+        "WeekDays": [
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI"
+        ],
+        "Months": [
+          "JAN",
+          "OCT",
+          "NOV",
+          "DEC"
+        ],
+        "MonthDays": [
+          "17",
+          "18",
+          "19"
+        ]
+      },
+      "IfBase:Folder:CompletionStatus_0": {
+        "Type": "If:CompletionStatus",
+        "CompletionStatus": "NOTOK",
+        "Mail_0": {
+          "Type": "Action:Mail",
+          "To": "vinicius.bitencourt@viavarejo.com.br",
+          "Message": "%%JOBNAME failed"
+        }
+      }
+    },
+    "ScriptJob": {
+      "Type": "Job:Script",
+      "SubApplication": "SampleSubApp",
+      "FileName": "ag_diag_comm",
+      "Host": "workbench",
+      "FilePath": "/home/workbench/ctm/scripts",
+      "RunAs": "workbench",
+      "Application": "SampleApp",
+      "When": {
+        "WeekDays": [
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI"
+        ],
+        "Months": [
+          "JAN",
+          "OCT",
+          "NOV",
+          "DEC"
+        ],
+        "MonthDays": [
+          "17",
+          "18",
+          "19"
+        ]
+      },
+      "IfBase:Folder:CompletionStatus_0": {
+        "Type": "If:CompletionStatus",
+        "CompletionStatus": "NOTOK",
+        "Mail_0": {
+          "Type": "Action:Mail",
+          "To": "vinicius.bitencourt@viavarejo.com.br",
+          "Message": "%%JOBNAME failed"
+        }
+      }
+    },
+    "Flow": {
+      "Type": "Flow",
+      "Sequence": [
+        "CommandJob",
+        "ScriptJob"
+      ]
+    }
+  }
+}
