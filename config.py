@@ -2,5 +2,5 @@
 
 import base64
 
-usuario_ctm = 'user_teste'
-senha_ctm = base64.b64decode(b'ZW1wYXNz').decode('utf-8')
+usuario_ctm = 'svc_apictm'
+senha_ctm = base64.b64decode(b'VmlhdmFyZWpvQDA1OTc=').decode('utf-8')
