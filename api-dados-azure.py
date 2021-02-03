@@ -4,12 +4,12 @@ import argparse
 import requests
 import urllib3
 import base64
+import json
 
-from config import usuario_ctm as usuario
-from config import senha_ctm as senha
+usuario = 'svc_apidados'
+senha = base64.b64decode(b'VmlhdmFyZWpvQDg1NDA=').decode('utf-8')
 
 parser = argparse.ArgumentParser(description='Parse Argument')
-
 parser.add_argument('endpoint', type=str, help='Extensao do arquivo')
 parser.add_argument('port', type=int, help='Porta da api em rest Swagger - Exemplo: 8443')
 parser.add_argument('url', type=str, help='Url para a request exemplo: /session/login ou /run/jobs/status')
@@ -34,8 +34,8 @@ def executa_job(args):
 
     try:
         r_login = requests.post(endPoint + '/session/login', json={"username": user, "password": passwd}, verify=False)
-        print(r_login.content) #exibe o conteudo do token
-        print(r_login.status_code) #retorna o exit code da requisicao
+        #print(r_login.content) #exibe o conteudo do token
+        #print(r_login.status_code) #retorna o exit code da requisicao
 
         if r_login.status_code != requests.codes.ok:
             print('Denied user, has no privilege to use Control-M API')
@@ -46,21 +46,18 @@ def executa_job(args):
             if args.method == 'GET':
                 try:
                     r = requests.get(endPoint + '{url}?jobname={jobname}'.format(url=args.url, jobname=args.jobname), headers={'Authorization': 'Bearer ' + token}, verify=False)
-                    print(r.content)
-                    print(r.status_code) #pode comentar essa linha para não sair com o return code
-                    exit(r.status_code == requests.codes.ok)
-                    r_logout = requests.post(endPoint + '/session/logout', json={"username": user, "password": passwd}, verify=False)
-                except requests.exceptions as e:
-                    mensagem = 'Exception {e}'.format(e=e)
-                    r = requests.get(args.url)
+                    #carrega o valor do objeto jobId em JSON
+                    data = json.loads(r.content)
+                    jobid = data['statuses'][0]
+                    jobid = jobid['jobId']
+                    #POST request - alterar runNow ou rerun
+                    rqpost = requests.post(endPoint + '/run/job/{jobid}/runNow'.format(jobid=jobid), headers={'Authorization': 'Bearer ' + token}, verify=False)
+                    print(rqpost.content)
+                    #print(rqpost.status_code) #pode comentar essa linha para não sair com o return code
+                    exit(rqpost.status_code == requests.codes.ok)
 
-            if args.method == 'POST':
-                try:
-                    r = requests.post(endPoint + '{url}'.format(url=args.url), headers={'Authorization': 'Bearer ' + token}, verify=False)
-                    print(r.content)
-                    print(r.status_code) #pode comentar essa linha para não sair com o return code
-                    exit(r.status_code == requests.codes.ok)
                     r_logout = requests.post(endPoint + '/session/logout', json={"username": user, "password": passwd}, verify=False)
+                    print(r_logout)
                 except requests.exceptions as e:
                     mensagem = 'Exception {e}'.format(e=e)
                     r = requests.get(args.url)
