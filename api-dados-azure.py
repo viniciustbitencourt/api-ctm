@@ -1,4 +1,4 @@
-#!/usr/bin/python2.7
+#!/usr/bin/python3.9
 
 import argparse
 import requests
@@ -34,8 +34,8 @@ def executa_job(args):
 
     try:
         r_login = requests.post(endPoint + '/session/login', json={"username": user, "password": passwd}, verify=False)
-        #print(r_login.content) #exibe o conteudo do token
-        #print(r_login.status_code) #retorna o exit code da requisicao
+        print(r_login.content) #exibe o conteudo do token
+        print(r_login.status_code) #retorna o exit code da requisicao
 
         if r_login.status_code != requests.codes.ok:
             print('Denied user, has no privilege to use Control-M API')
@@ -51,9 +51,9 @@ def executa_job(args):
                     jobid = data['statuses'][0]
                     jobid = jobid['jobId']
                     #POST request - alterar runNow ou rerun
-                    rqpost = requests.post(endPoint + '/run/job/{jobid}/runNow'.format(jobid=jobid), headers={'Authorization': 'Bearer ' + token}, verify=False)
+                    rqpost = requests.post(endPoint + '/run/job/{jobid}/confirm'.format(jobid=jobid), headers={'Authorization': 'Bearer ' + token}, verify=False)
                     print(rqpost.content)
-                    #print(rqpost.status_code) #pode comentar essa linha para não sair com o return code
+                    print(rqpost.status_code) #pode comentar essa linha para não sair com o return code
                     exit(rqpost.status_code == requests.codes.ok)
 
                     r_logout = requests.post(endPoint + '/session/logout', json={"username": user, "password": passwd}, verify=False)
