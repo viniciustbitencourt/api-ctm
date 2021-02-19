@@ -15,9 +15,7 @@
       "When": {
         "WeekDays": [
           "MON",
-          "TUE",
           "WED",
-          "THU",
           "FRI"
         ],
         "Months": [
@@ -29,7 +27,8 @@
         "MonthDays": [
           "17",
           "18",
-          "19"
+          "19",
+          "20"
         ]
       },
       "IfBase:Folder:CompletionStatus_0": {
@@ -38,7 +37,7 @@
         "Mail_0": {
           "Type": "Action:Mail",
           "To": "vinicius.bitencourt@viavarejo.com.br",
-          "Message": "%%JOBNAME failed"
+          "Message": "%%JOBNAME failed with retry"
         }
       }
     },
